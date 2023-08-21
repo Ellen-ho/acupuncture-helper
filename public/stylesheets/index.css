@@ -1,0 +1,51 @@
+header {
+  overflow: hidden;
+}
+
+.navbar {
+  background-color: #cdd1d3;
+}
+
+.navbar .navbar-brand {
+  color: #4592af;
+  font-weight: bold;
+  font-size: 38px;
+}
+
+.navbar .navbar-brand:hover {
+  color: #226089;
+}
+
+.total-amount {
+  color: rgb(224, 122, 26);
+  font-size: 100px;
+  text-align: center;
+}
+
+.record-list .row>div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.record-list .row>div.name-date {
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.record-list .row>div.name-date .name {
+  font-size: 40px;
+}
+
+.record-list .row>div.name-date .date {
+  font-size: 20px;
+}
+
+.record-list .row .amount {
+  font-size: 30px;
+}
+
+.title-icon {
+  font-size: 1.5rem;
+}

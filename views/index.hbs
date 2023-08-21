@@ -1,0 +1,124 @@
+<h2 class="text-center mt-5">Today's acupuncture work</h2>
+<div class="container mt-3">
+  <form action="/" method="GET">
+    <div class="form-group">
+      <select class="form-control" name="currentLocationCategoryId" onchange="this.form.submit()">
+        {{#if currentLocationCategoryName}}<option>{{currentLocationCategoryName}}</option>{{/if}}
+        <option value="">All</option>
+        {{#each locationCategories}}
+        <option value="{{this._id}}">
+          {{this.locationCategoryName}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+  </form>
+  <div class="d-flex justify-content-center mt-3 mb-3">
+    <a href="/patients/list" class="btn btn-info">Patient List</a>
+  </div>
+  <h4 class="row justify-content-center align-items-center vh-1">
+    {{currentDate}} 
+  </h4>
+  <ul class="list-group">
+    {{#each patients}}
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="row">
+              <div class="col-lg-12 name-date">
+                <div class="chartNo">
+                  No. {{ this.chartNo }}
+                </div>
+              </div>
+              <div class="col-lg-12 h4 bold">
+                {{#ifEquals this.gender "male"}}
+                  <span class="text-primary">
+                    <i class="fas fa-mars title-icon"></i>
+                    {{this.name}} ({{this.age}}y) 
+                  </span>
+                {{else}}
+                  <span class="text-danger">
+                    <i class="fas fa-venus"></i>
+                    {{this.name}} ({{this.age}}y) 
+                  </span>
+                {{/ifEquals}}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="d-flex flex-column align-items-start flex-grow-3 border-right pl-4 pr-4">
+            <div class="h8 text-dark bold mt-1">
+              <i class="fa-solid fa-bed"></i> No. {{this.wardNumber}}, {{this.locationCategoryName}}
+            </div>
+            <div class="h6 bold mt-1">
+              <i class="fa-solid fa-clock"></i> {{this.record.formattedStartAt}} - {{this.record.formattedEndAt}}
+            </div>
+            <div class="h4 bold d-flex mt-2 align-items-center"> 
+              <i class="fa-solid fa-hourglass fa-sm" style="margin-right: 15px;"></i> 
+              {{#if this.record}}
+                {{#if this.record.isCompleted}}
+                  <span id="countdown-{{this.record._id}}" class="btn btn-danger disabled">Completed</span>
+                {{else}}
+                  <span id="countdown-{{this.record._id}}" class="countdown-timer badge badge-info">{{this.record.endAt}}</span>
+                {{/if}}
+              {{else}} 
+                - 
+              {{/if}}
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1 pl-4 pr-4">
+              {{#if this.record}}
+                <a class="btn btn-outline-secondary" href="/records/{{this.record._id}}"><i class="fa-solid fa-eye"></i> View</a>  
+              {{else}}
+                <a class="btn btn-outline-success" href="/patients/{{this._id}}/records/new">
+                  <i class="fa-solid fa-circle-plus"></i> Start
+                </a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+<script>
+  function updateCountdown(targetDateTime, elementId) {
+    const now = new Date().getTime();
+    const targetTime = new Date(targetDateTime).getTime();
+    const timeRemaining = targetTime - now;
+
+    if (timeRemaining <= 0) {
+      document.getElementById(elementId).innerHTML = "Time's Up";
+    } else {
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+      const countdownText = `${minutes}:${seconds}`;
+      document.getElementById(elementId).innerHTML = countdownText;
+    }
+  }
+
+  const countdownElements = document.querySelectorAll('.countdown-timer');
+  const countdowns = Array.from(countdownElements).map(element => {
+    console.log(element.textContent)
+    const targetDate = new Date(element.textContent).getTime();
+    const elementId = element.id;
+    return { targetDate, elementId };
+  });
+
+  // Initial call to update countdowns
+  countdowns.forEach(countdown => {
+    updateCountdown(countdown.targetDate, countdown.elementId);
+  });
+
+  // Update countdowns every second
+  setInterval(() => {
+    countdowns.forEach(countdown => {
+      updateCountdown(countdown.targetDate, countdown.elementId);
+    });
+  }, 1000);
+  
+</script>

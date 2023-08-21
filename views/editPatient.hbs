@@ -1,0 +1,35 @@
+<h2 class="text-center mt-5">Edit Patient's information</h2>
+<form action="/patients/{{patient._id}}?_method=PUT" method="POST" class="container mt-5">
+  <div class="column">
+    <div class="text-danger">*required</div>
+      <div class="form-group mt-2">
+        <label for="name">Full Name<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="name" value="{{patient.name}}" required>
+      </div>
+      <div class="form-group mt-2">
+        <label for="gender">Gender<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="gender" value="{{patient.gender}}" required>
+      </div>
+      <div class="form-group mt-3">
+        <label for="age">Age<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="age" value="{{patient.age}}" required>
+      </div>
+      <div class="form-group mt-2">
+        <label for="wardNumber">Ward number<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="wardNumber" value="{{patient.wardNumber}}"  required>
+      </div>
+      <div class="form-group mt-2">
+        <label for="locationCategory">Location<span class="text-danger">*</span></label>
+        <select class="form-control" name="locationCategoryId">
+          {{#each locationCategories}}
+          <option value="{{this._id}}">
+            {{this.locationCategoryName}}
+          </option>
+          {{/each}}
+        </select>
+      </div>
+      </div>
+      <div class="text-center">
+      <button type="submit" class="btn btn-info">Save</button>
+      </div>
+      </form>

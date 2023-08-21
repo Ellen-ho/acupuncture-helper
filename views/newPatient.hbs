@@ -1,0 +1,42 @@
+<h2 class="text-center mt-5">Please input patient information</h2>
+<form action="/patients/new" method="POST" class="container mt-5">
+  <div class="column">
+    <div class="text-danger">*required</div>
+     <div class="form-group mt-2">
+      <label for="chartNo">Chart No<span class="text-danger">*</span></label>
+      <input type="text" class="form-control" name="chartNo" required>
+    </div>
+      <div class="form-group mt-2">
+      <label for="name">Full Name<span class="text-danger">*</span></label>
+      <input type="text" class="form-control" name="name" required>
+    </div>
+  <div class="form-group mt-2"></div>
+  <label for="gender">Gender<span class="text-danger">*</span></label>
+  <select class="form-control" name="gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Non-binary">Non-binary</option>
+  </select>
+    <div class="form-group mt-3">
+      <label for="age">Age<span class="text-danger">*</span></label>
+      <input type="text" class="form-control" name="age" required>
+    </div>
+    <div class="form-group mt-2">
+      <label for="wardNumber">Ward number<span class="text-danger">*</span></label>
+      <input type="text" class="form-control" name="wardNumber" required>
+    </div>
+    <div class="form-group mt-2">
+      <label for="locationCategory">Location<span class="text-danger">*</span></label>
+      <select class="form-control" name="locationCategoryId">
+        {{#each locationCategories}}
+        <option value="{{this._id}}">
+          {{this.locationCategoryName}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+  <div class="text-center">
+  <button type="submit" class="btn btn-info">Submit</button>
+  </div>
+</form>

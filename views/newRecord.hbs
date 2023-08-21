@@ -1,0 +1,65 @@
+<h2 class="text-center mt-5">Please enter the number of acupuncture points on body parts.</h2>
+{{!-- 
+POST /patients/new
+GET /patients/{{patient._id}}/recordList
+PUT /patients/{{patient._id}}/edit
+POST /patients/{{patient._id}}/records/new
+PUT /patients/{{patient._id}}/records/{{recordId}}/complete <- record completed
+ --}}
+<form action="/patients/{{patient._id}}/records/new" method="POST" class="container mt-5">
+  <div class="column">
+    <div class="row justify-content-center">
+     <h4 class="name font-weight-bold">
+      {{ patient.name }}
+     </h4>
+  </div>
+    <div class="text-danger mt-2">*required</div>
+    <div class="form-group mt-2">
+      <label for="date">Date<span class="text-danger">*</span></label>
+      <input type="date" class="form-control new-date" id="date" name="date" placeholder="Date" value="{{record.date}}"
+        autocomplete="on" required>
+    </div>
+    <div class="form-group">
+      <label for="headAmount">Head<span class="text-danger">*</span></label>
+      <input type="number" min="0" class="form-control" name="headAmount" required>
+    </div>
+    <div class="form-group">
+      <label for="neckAndShoulderAmount">Neck And Shoulder<span class="text-danger">*</span></label>
+      <input type="number" min="0" class="form-control" name="neckAndShoulderAmount" required>
+    </div>
+    <div class="form-group">
+      <label for="leftHandAmount">Left Hand<span class="text-danger">*</span></label>
+      <input type="number" min="0" class="form-control" name="leftHandAmount" required>
+    </div>
+    <div class="form-group">
+      <label for="rightHandAmount">Right Hand<span class="text-danger">*</span></label>
+      <input type="number" min="0" class="form-control" name="rightHandAmount" required>
+    </div>
+    <div class="form-group">
+      <label for="lowerBackAmount">Lower Back<span class="text-danger">*</span></label>
+      <input type="number" min="0" class="form-control" name="lowerBackAmount" required>
+    </div>
+    <div class="form-group">
+      <label for="abdomenAmount">Abdomen<span class="text-danger">*</span></label>
+      <input type="number" min="0" class="form-control" name="abdomenAmount" required>
+    </div>
+    <div class="form-group">
+      <label for="buttocksAmount">Buttocks<span class="text-danger">*</span></label>
+      <input type="number" min="0" class="form-control" name="buttocksAmount" required>
+    </div>
+    <div class="form-group">
+      <label for="leftLegAmount">Left Leg<span class="text-danger">*</span></label>
+      <input type="number" min="0" class="form-control" name="leftLegAmount" required>
+    </div>
+    <div class="form-group">
+      <label for="rightLegAmount">Right Leg<span class="text-danger">*</span></label>
+      <input type="number" min="0" class="form-control" name="rightLegAmount" required>
+    </div>
+    <div class="form-group">
+      <label for="soleAmount">Sole<span class="text-danger">*</span></label>
+      <input type="number" min="0" class="form-control" name="soleAmount" required>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-info">Submit</button>
+    </div>
+</form>
