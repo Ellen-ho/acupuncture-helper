@@ -2,7 +2,7 @@
 
 ## 專案呈現畫面
 
-![Image]()
+![Image](./public/img/acupunctureHelper.PNG)
 
 ## 功能描述 (features)
 
