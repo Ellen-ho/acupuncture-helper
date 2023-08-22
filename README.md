@@ -87,6 +87,15 @@
 - Bootswatch: v5.2.3
 - jQuery: v3.3.1
 
+## 測試帳號
+
+- 登入頁
+
+  ```
+  email: doctor1@example.com
+  password: 12345678
+  ```
+
 ## 作者
 
 Ellen-Ho
