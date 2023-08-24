@@ -4,9 +4,9 @@
       <h1 class="text-center mt-3">註冊</h1>
       {{>message}}
       <form action="/users/register" method="POST">
-        <div class="text-danger">* 為必填欄位</div>
+        <div class="text-danger">* required</div>
         <div class="mb-3">
-          <label for="name" class="mb-2">姓名<span class="text-danger">*</span></label>
+          <label for="name" class="mb-2">Name</label><span class="text-danger">*</span></label>
           <input type="text" id="name" name="name" class="form-control" placeholder="輸入姓名" value="{{name}}">
         </div>
         <div class="mb-3">
@@ -14,19 +14,19 @@
           <input type="email" id="email" name="email" class="form-control" placeholder="輸入 Email" value="{{email}}">
         </div>
         <div class="mb-3">
-          <label for="password" class="mb-2">密碼<span class="text-danger">*</span></label>
+          <label for="password" class="mb-2">Password<span class="text-danger">*</span></label>
           <input type="password" id="password" name="password" class="form-control" placeholder="輸入密碼"
             value="{{password}}">
         </div>
         <div class="mb-3">
-          <label for="confirmPassword" class="mb-2">確認密碼<span class="text-danger">*</span></label>
+          <label for="confirmPassword" class="mb-2">ConfirmPassword<span class="text-danger">*</span></label>
           <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="再次輸入密碼"
             value="{{confirmPassword}}">
         </div>
-        <button type="submit" class="btn btn-primary w-100">註冊</button>
+        <button type="submit" class="btn btn-primary w-100">Sign up</button>
       </form>
       <p class="lead mt-4">
-        已經註冊? <a href="/users/login">登入</a>
+        Have you already registered? <a href="/users/login">Sign in</a>
       </p>
     </div>
   </div>

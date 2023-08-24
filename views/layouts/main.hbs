@@ -16,24 +16,24 @@
 </head>
 
 <body>
-      <header>
-            <!-- navigation -->
-            <nav class="navbar navbar-light">
-                  <div class="container d-flex justify-content-between">
-                        <a class="navbar-brand" href="/">
+      <!-- navigation -->
+      <nav class="fixed-top navbar navbar-light">
+            <div class="container d-flex flex-column align-items-center">
+                  <a class="navbar-brand" href="/">
+                        <h1> 
                         {{#if isAuthenticated}}
-                        {{#if user.name}}
-                        {{user.name}}'s
-                        {{/if}}
+                              {{#if user.name}}
+                                    {{user.name}}'s
+                              {{/if}}
                         {{/if}} Acupuncture helper
-                        </a>
-                        {{#if isAuthenticated}}
+                        </h1>
+                  </a>
+                
+                  {{#if isAuthenticated}}
                         <a href="/users/logout" class="btn btn-info">Sign out</a>
-                        {{/if}}
-                        </a>
-                  </div>
-            </nav>
-      </header>
+                  {{/if}}      
+            </div>
+      </nav>
 
       <!-- parital templates will replace the part of "body" here -->
       {{{body}}}
