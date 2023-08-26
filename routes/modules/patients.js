@@ -23,7 +23,7 @@ router.post("/new", (req, res) => {
   const newPatient = req.body;
   // 將實例存入資料庫
   return Patient.create({ ...newPatient })
-    .then(() => res.redirect("/list"))
+    .then(() => res.redirect("/patients/list"))
     .catch((error) => console.log(error));
 });
 
@@ -72,7 +72,7 @@ router.delete("/:id", (req, res) => {
   const _id = req.params.id;
   return Patient.findOne({ _id })
     .then((Patient) => Patient.remove())
-    .then(() => res.redirect("/list"))
+    .then(() => res.redirect("/patients/list"))
     .catch((error) => console.log(error));
 });
 
@@ -145,7 +145,7 @@ router.put("/:id", (req, res) => {
       results = Object.assign(patient, req.body);
       return patient.save();
     })
-    .then(() => res.redirect("/list"))
+    .then(() => res.redirect("/patients/list"))
     .catch((error) => console.log(error));
 });
 

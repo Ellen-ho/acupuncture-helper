@@ -50,7 +50,7 @@
             <div class="h8 text-dark bold mt-1">
               <i class="fa-solid fa-bed"></i> No. {{this.wardNumber}}, {{this.locationCategoryName}}
             </div>
-            <div class="h6 bold mt-1">
+            <div class="h5 bold mt-1">
               <i class="fa-solid fa-clock"></i> {{this.record.formattedStartAt}} - {{this.record.formattedEndAt}}
             </div>
             <div class="h4 bold d-flex mt-2 align-items-center"> 
@@ -103,7 +103,6 @@
 
   const countdownElements = document.querySelectorAll('.countdown-timer');
   const countdowns = Array.from(countdownElements).map(element => {
-    console.log(element.textContent)
     const targetDate = new Date(element.textContent).getTime();
     const elementId = element.id;
     return { targetDate, elementId };

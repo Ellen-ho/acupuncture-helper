@@ -9,26 +9,18 @@
 <ul class="list-group record-list mt-2">
   {{#each updatedRecords}}
   <li class="list-group-item">
-    <div class="row justify-content-between">
-      <div class="col-lg-4 name-date">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-4 name-date">
         <div class="date">
           {{ this.date }}
         </div>
       </div>
-      <div class="col-lg-2 d-flex justify-content-center align-items-center">
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
         <div class="startAt">
-          {{ this.formattedStartAt }}
+          {{ this.formattedStartAt }} ~ {{ this.formattedEndAt }}
         </div>
       </div>
-      <div class="col-lg-1 d-flex justify-content-center align-items-center">
-        <span>~</span>
-      </div>
-      <div class="col-lg-2 d-flex justify-content-center align-items-center">
-        <div class="endAt">
-          {{ this.formattedEndAt }}
-        </div>
-      </div>
-      <div class="col-lg-3 d-flex justify-content-center align-items-center">
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
         <a class="btn btn-outline-success font-weight-bold" href="/records/{{ this._id }}">Details</a>
         <form action="/records/{{ this._id }}?_method=DELETE" method="POST"
           onsubmit="return confirm('Are you sure you want to delete?')" style="display: inline;">
