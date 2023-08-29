@@ -5,13 +5,13 @@
 ## 專案呈現畫面 1
 
 <div align="center">
-  <img width="100%" align="center" src="./public/img/acupunctureHelper.PNG">
+  <img width="80%" align="center" src="./public/img/acupunctureHelper.PNG">
 </div>
 
 ## 專案呈現畫面 2
 
 <div align="center">
-  <img width="100%" align="center" src="./public/img/demoPicture.PNG">
+  <img width="80%" align="center" src="./public/img/demoPicture.PNG">
 </div>
 
 ## 功能描述 (features)
