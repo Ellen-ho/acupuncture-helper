@@ -5,7 +5,7 @@
 ## 專案呈現畫面 1
 
 <div align="center">
-  <img width="100%" align="center" src="./public/img/acupuntureHelper.PNG">
+  <img width="100%" align="center" src="./public/img/acupunctureHelper.PNG">
 </div>
 
 ## 專案呈現畫面 2
