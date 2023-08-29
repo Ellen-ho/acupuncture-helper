@@ -23,7 +23,7 @@
 
 <br>
 
-### Sign in by FaceBook
+## Sign in by FaceBook
 
 <div align="center">
   <img width="80%" align="center" src="./public/img/facebookLogin.gif">
