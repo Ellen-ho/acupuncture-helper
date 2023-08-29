@@ -1,8 +1,12 @@
 # acupuncture-helper
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+
 ## 專案呈現畫面
 
 ![Image](./public/img/acupuntureHelper.PNG)
+
+![Image](./public/img/demo picture.PNG)
 
 ## 功能描述 (features)
 
