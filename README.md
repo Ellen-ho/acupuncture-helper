@@ -18,6 +18,7 @@
 <br>
 <p align="center">
   <a href="https://acupuncture-helper-service.onrender.com">Start the acupuncture treatment</a>
+  <span>(Reminder: the service is hosted by the free instance of Render which will automatically spin down after 15 minutes of inactivity. So it may takes few minutes to open the site)</span>
 </p>
 
 <br>
