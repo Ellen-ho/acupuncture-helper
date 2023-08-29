@@ -4,9 +4,13 @@
 
 ## 專案呈現畫面
 
-![Image](./public/img/acupuntureHelper.PNG)
+<div align="center">
+  <img width="100%" align="center" src="./public/img/acupuntureHelper.PNG">
+</div>
 
-![Image](./public/img/demo picture.PNG)
+<div align="center">
+  <img width="100%" align="center" src="./public/img/demoPicture.PNG">
+</div>
 
 ## 功能描述 (features)
 
