@@ -1,18 +1,36 @@
-# acupuncture-helper
+# Acupuncture-Helper
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 
 ## 專案呈現畫面 1
 
 <div align="center">
-  <img width="100%" align="center" src="./public/img/acupunctureHelper.PNG">
+  <img width="80%" align="center" src="./public/img/acupunctureHelper.PNG">
 </div>
 
 ## 專案呈現畫面 2
 
 <div align="center">
-  <img width="100%" align="center" src="./public/img/demoPicture.PNG">
+  <img width="80%" align="center" src="./public/img/demoPicture.PNG">
 </div>
+
+<br>
+<br>
+<p align="center">
+  <a href="https://acupuncture-helper-service.onrender.com">Start the acupuncture treatment</a><br>
+  <span>(Reminder: the service is hosted by the free instance of Render which will automatically spin down after 15 minutes of inactivity. So it may takes few minutes to open the site)</span>
+</p>
+
+<br>
+
+## Sign in by FaceBook
+
+<div align="center">
+  <img width="80%" align="center" src="./public/img/facebookLogin.gif">
+</div>
+
+> [!NOTE]  
+> 本地端可使用，但因 Meta For Developers 政策近期有大符改變：上線之產品需經過實體商家認證，因而佈署雲端後無法用 Facebook 帳號進行登入，上方用 gif 圖顯示本地端能正常使用的畫面
 
 ## 功能描述 (features)
 
@@ -26,7 +44,7 @@
     畫面會跳出錯誤提示
 - 使用者登入:
   - 使用者可透過 Email、密碼登入才可看見自己的記帳清單
-  - 使用者可透過 Facebook 帳號進行登入
+  - 使用者可透過 Facebook 帳號進行登入 **(本地端可使用，但因 Meta For Developers 政策近期有大符改變：上線之產品需經過實體商家認證，因而佈署雲端後無法用 Facebook 帳號進行登入，上方用 gif 圖顯示本地端能正常使用的畫面)**
   - 輸入有錯誤時畫面會跳出提示
 - 登入後:
   - 首頁可一次瀏覽所有當天需治療患者的清單資訊
