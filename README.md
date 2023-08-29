@@ -23,6 +23,12 @@
 
 <br>
 
+### Sign in by FaceBook
+
+<p align="center">
+  <img width="80%" align="center" src="./public/img/facebookLogin.gif">
+</p>
+
 > [!NOTE]  
 > 本地端可使用，但因 Meta For Developers 政策近期有大符改變：上線之產品需經過實體商家認證，因而佈署雲端後無法用 Facebook 帳號進行登入，上方用 gif 圖顯示本地端能正常使用的畫面
 
