@@ -17,7 +17,8 @@
 <br>
 <br>
 <p align="center">
-  <a href="https://acupuncture-helper-service.onrender.com">Start the acupuncture treatment</a><br>
+  <a href="https://acupuncture-helper-service.onrender.com">Start the acupuncture treatment</a>
+  <a href="https://github.com/Ellen-ho/acupuncture-helper#%E6%B8%AC%E8%A9%A6%E5%B8%B3%E8%99%9F">(test account)</a><br>
   <span>(Reminder: the service is hosted by the free instance of Render which will automatically spin down after 15 minutes of inactivity. So it may takes few minutes to open the site)</span>
 </p>
 
