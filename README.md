@@ -24,15 +24,6 @@
 
 <br>
 
-## Sign in by FaceBook
-
-<div align="center">
-  <img width="80%" align="center" src="./public/img/facebookLogin.gif">
-</div>
-
-> [!NOTE]  
-> 本地端可使用，但因 Meta For Developers 政策近期有大符改變：上線之產品需經過實體商家認證，因而佈署雲端後無法用 Facebook 帳號進行登入，上方用 gif 圖顯示本地端能正常使用的畫面
-
 ## 功能描述 (features)
 
 - 專案介紹: 進行會診針灸治療時，要到各個病房進行針灸治療，每位患者治療 15 分鐘，再由另一組醫師進行拔針，為了解決以下問題:
@@ -44,7 +35,6 @@
   - 使用者可透過輸入姓名、Email、密碼、確認密碼進行註冊，所有欄位皆為必填，輸入有錯誤時，畫面會跳出錯誤提示
 - 使用者登入:
   - 使用者可透過 Email、密碼登入
-  - 使用者可透過 Facebook 帳號進行登入 **(本地端可使用，但因 Meta For Developers 政策近期有大符改變：上線之產品需經過實體商家認證，因而佈署雲端後無法用 Facebook 帳號進行登入，上方用 gif 圖顯示本地端能正常使用的畫面)**
   - 輸入有錯誤時畫面會跳出提示
 - 登入後:
   - 首頁可一次瀏覽所有當天需治療患者的清單資訊
@@ -108,7 +98,6 @@
 - mongoDB: v4.2.10
 - bcryptjs: v2.4.3
 - passport: v0.4.1
-- passport-facebook: v3.0.0
 - passport-local: v1.0.0
 - bootstrap: v4.2.1
 - font-awesome: v6.3.0
