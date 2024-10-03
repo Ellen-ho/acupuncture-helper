@@ -18,11 +18,10 @@ const recordSchema = new Schema({
   soleAmount: Number,
   totalAmount: Number,
   patientId: {
-    // 加入關聯設定
     type: Schema.Types.ObjectId,
     ref: "Patient",
     index: true,
     required: true,
   },
-});
+}, { timestamps: true });
 module.exports = mongoose.model("Record", recordSchema);
