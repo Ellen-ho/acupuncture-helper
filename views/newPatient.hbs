@@ -1,10 +1,11 @@
 <h5 class="text-center mt-5">Please input patient information</h5>
-<form action="/patients/new" method="POST" class="container mt-5">
+<form id="patientForm" action="/patients/new" method="POST" class="container mt-5">
   <div class="column">
     <div class="text-danger">*required</div>
      <div class="form-group mt-2">
       <label for="chartNo">Chart No<span class="text-danger">*</span></label>
-      <input type="text" class="form-control" name="chartNo" required>
+      <input type="text" class="form-control" id="chartNo" name="chartNo" required>
+      <div id="chartNoError" class="text-danger mt-1" style="display: none;">Chart No is duplicated, please check.</div>
     </div>
       <div class="form-group mt-2">
       <label for="name">Full Name<span class="text-danger">*</span></label>
@@ -41,3 +42,22 @@
   <button type="submit" class="btn btn-info">Submit</button>
   </div>
 </form>
+
+<script>
+  document.getElementById('patientForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    const chartNo = document.getElementById('chartNo').value;
+
+    fetch(`/patients/check-chart-no?chartNo=${chartNo}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.exists) {
+          document.getElementById('chartNoError').style.display = 'block';
+        } else {
+          document.getElementById('chartNoError').style.display = 'none';
+          document.getElementById('patientForm').submit();
+        }
+      })
+      .catch(error => console.error('Error:', error));
+  });
+</script>

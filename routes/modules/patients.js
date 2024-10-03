@@ -18,10 +18,25 @@ router.get("/new", (req, res) => {
     .catch((error) => console.log(error));
 });
 
+router.get("/check-chart-no", async (req, res) => {
+  const { chartNo } = req.query;
+
+  try {
+    const existingPatient = await Patient.findOne({ chartNo });
+    if (existingPatient) {
+      return res.json({ exists: true });
+    } else {
+      return res.json({ exists: false });
+    }
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 // 新增患者，後導回 patients/list頁面
 router.post("/new", (req, res) => {
   const newPatient = req.body;
-  // 將實例存入資料庫
   return Patient.create({ ...newPatient })
     .then(() => res.redirect("/patients/list"))
     .catch((error) => console.log(error));

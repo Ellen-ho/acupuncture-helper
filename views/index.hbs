@@ -19,6 +19,13 @@
   <h4 class="row justify-content-center align-items-center vh-1">
     {{currentDate}} 
   </h4>
+
+  {{#if noPatients}}
+   <div class="d-flex justify-content-center align-items-center mt-5" style="border: 2px solid #ccc; padding: 20px; border-radius: 10px; width: 100%; max-width: 700px; margin: 0 auto;">
+    <img src="/img/no-results-icon.png" alt="Not found icon" class="mr-3" style="width: 70px; height: 70px; vertical-align: middle;">
+    <p class="text-center" style="font-size: 1.5rem; font-style: italic; font-weight: normal; margin: 0;">No patients need treatment at this location.</p>
+   </div>
+  {{else}}
   <ul class="list-group">
     {{#each patients}}
       <li class="list-group-item">
@@ -81,7 +88,8 @@
         </div>
       </li>
     {{/each}}
-  </ul>
+   </ul>
+ {{/if}}
 </div>
 
 <script>
@@ -108,12 +116,10 @@
     return { targetDate, elementId };
   });
 
-  // Initial call to update countdowns
   countdowns.forEach(countdown => {
     updateCountdown(countdown.targetDate, countdown.elementId);
   });
 
-  // Update countdowns every second
   setInterval(() => {
     countdowns.forEach(countdown => {
       updateCountdown(countdown.targetDate, countdown.elementId);
