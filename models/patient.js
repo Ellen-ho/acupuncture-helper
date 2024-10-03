@@ -7,7 +7,7 @@ const patientSchema = new Schema({
   gender: String,
   age:Number,
   wardNumber: String,
-  locationCategoryId: { // 加入關聯設定
+  locationCategoryId: { 
     type: Schema.Types.ObjectId,
     ref: 'LocationCategory',
     index: true,

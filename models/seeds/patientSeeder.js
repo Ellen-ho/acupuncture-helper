@@ -31,9 +31,7 @@ const SEED_PATIENT = [
 
 db.once('open', async () => {
   console.log('start patient seeder!')
-  // 由於 category ID 是隨機產生，必須要先把以新增的分類取出，供後續新增 patient 時 categoryId 使用
   const locationCategories = await LocationCategory.find()
-  // 產出 category 和 ID 的對應供後續 mapping
   const locationCategoryIdMapping = locationCategories.reduce((prev, curr) => {
     return {
       ...prev,

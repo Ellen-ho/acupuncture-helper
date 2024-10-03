@@ -26,7 +26,6 @@ router.get("/", async (req, res) => {
   ])
     .then((results) => {
       const [locationCategories, patients, todayRecords] = results;
-      console.log(results);
 
       const patientsWithLocationCategoryName = patients.map((patient) => {
         const locationCategory = locationCategories.find(
@@ -47,16 +46,13 @@ router.get("/", async (req, res) => {
       const todayRecordsWithLocalTime =
         convertTimeFieldsToLocalTime(todayRecords);
 
-      // 原始records
       const originalRecords = todayRecordsWithLocalTime;
 
       const updatedRecords = originalRecords.map((record) => {
         const updatedRecord = { ...record };
 
-        // 转换日期格式为 "YYYY-MM-DD"
         updatedRecord.date = dayjs(record.date).format("YYYY-MM-DD");
 
-        // 转换时间格式为 "HH:mm:ss"
         updatedRecord.formattedStartAt = dayjs(record.startAt).format(
           "HH:mm:ss"
         );
@@ -72,6 +68,7 @@ router.get("/", async (req, res) => {
 
       let currentLocationCategoryName;
       let chooseLocationCategories;
+      let noPatients = patientsWithRecord.length === 0;
       if (currentLocationCategoryId === "all") {
         chooseLocationCategories = locationCategories;
       } else {
@@ -79,7 +76,6 @@ router.get("/", async (req, res) => {
           currentLocationCategoryId,
           locationCategories
         ).locationCategoryName;
-        //去掉目前的選項
         chooseLocationCategories = locationCategories.filter((item) => {
           return item._id.toString() !== currentLocationCategoryId;
         });
@@ -89,6 +85,7 @@ router.get("/", async (req, res) => {
         locationCategories: chooseLocationCategories,
         currentLocationCategoryName,
         patients: patientsWithRecord,
+        noPatients,
         currentDate: dayjs(toLocalTimezone(dayjs().toISOString())).format(
           "YYYY-MM-DD"
         ),

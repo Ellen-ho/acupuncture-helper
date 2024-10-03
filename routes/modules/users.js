@@ -20,7 +20,6 @@ router.get('/register', (req, res) => {
 })
 
 router.post('/register', (req, res) => {
-  // 取得註冊表單參數
   const { name, email, password, confirmPassword } = req.body
   const errors = []
 
@@ -40,9 +39,7 @@ router.post('/register', (req, res) => {
     })
   }
 
-  // 檢查使用者是否已經註冊
   User.findOne({ email }).then(user => {
-    // 如果已經註冊：退回原本畫面
     if (user) {
       errors.push({ message: 'This email has already been registered!' })
       return res.render('register', {
@@ -54,10 +51,9 @@ router.post('/register', (req, res) => {
       })
     }
     return bcrypt
-      .genSalt(10)// 參數為複雜度
+      .genSalt(10)
       .then(salt => bcrypt.hash(password, salt))
       .then(hash =>
-      // 如果還沒註冊：寫入資料庫
         User.create({
           name,
           email,

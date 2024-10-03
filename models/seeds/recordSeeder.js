@@ -61,14 +61,13 @@ const SEED_RECORD = [
 
 db.once("open", async () => {
   try {
-    // 建立與 Patient 相關聯的記錄
     for (const seedRecord of SEED_RECORD) {
       const patient = await Patient.findOne({ chartNo: seedRecord.chartNo });
 
       if (patient) {
         const recordData = {
           ...seedRecord,
-          patientId: patient._id, // 使用 Patient 的 _id 作為關聯
+          patientId: patient._id, 
         };
 
         await Record.create(recordData);
