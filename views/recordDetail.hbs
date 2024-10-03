@@ -77,7 +77,29 @@
         </tbody>
       </table>
     </div>
-    <div class="text-center mt-4">
-      <button class="btn btn-info" type="submit">Complete</button>
-    </div>
+   
+    {{#unless recordWithPatientName.isCompleted}}
+      <div class="d-flex justify-content-center mt-4">
+        <button id="completeButton" class="btn btn-info" type="submit" style="display: none;">Complete</button>
+      </div>
+    {{/unless}}
   </div>
+</form>
+
+<script>
+  const recordCreatedAt = new Date("{{ recordWithPatientName.createdAt }}").getTime();
+
+  const fifteenMinutesLater = recordCreatedAt + 15 * 60 * 1000;
+
+  const now = new Date().getTime();
+
+  const timeRemaining = fifteenMinutesLater - now;
+
+  if (timeRemaining > 0 && !{{ recordWithPatientName.isCompleted }}) {
+    setTimeout(() => {
+      document.getElementById('completeButton').style.display = 'block';
+    }, timeRemaining);
+  } else if (!{{ recordWithPatientName.isCompleted }}) {
+    document.getElementById('completeButton').style.display = 'block';
+  }
+</script>
